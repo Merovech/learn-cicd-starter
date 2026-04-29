@@ -39,3 +39,9 @@ jobs:
 
       - name: Output linting result
         run: echo $?
+
+      - name: Install staticcheck
+        run: go install honnef.com/go/tools/cmd/staticcheck@latest
+
+      -name: run staticcheck
+        run: staticcheck ./...
